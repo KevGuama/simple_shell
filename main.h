@@ -16,19 +16,18 @@
 #define TOK_BUFSIZE 128
 #define TOK_DELIM " \t\r\n\a"
 
-/* Points to an array of pointers to strings called the "environment" */
+/*Holds a collection of pointers to strings, commonly known as the "environment"*/
 extern char **environ;
 
 
-/**
- * struct data - struct that contains all relevant data on runtime
- * @av: argument vector
- * @input: command line written by the user
- * @args: tokens of the command line
- * @status: last status of the shell
- * @counter: lines counter
- * @_environ: environment variable
- * @pid: process ID of the shell
+/*struct data: is a structure that contains all the necessary data for runtime.
+ * av: refers to the argument vector.
+ * input: is the command line that the user has written.
+ * args: represents the tokens of the command line.
+ * status: keeps track of the last status of the shell.
+ * counter: counts the lines.
+ * _environ: references the environment variable.
+ * pid: stores the process ID of the shell.
  */
 typedef struct data
 {
@@ -231,3 +230,4 @@ void aux_help_cd(void);
 int get_help(data_shell *datash);
 
 #endif
+
