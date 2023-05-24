@@ -20,9 +20,10 @@
 extern char **environ;
 
 
-/*struct data: is a structure that contains all the necessary data for runtime.
+/**
+ * struct data: is a structure that contains data
  * av: refers to the argument vector.
- * input: is the command line that the user has written.
+ * input: is the user command line has written.
  * args: represents the tokens of the command line.
  * status: keeps track of the last status of the shell.
  * counter: counts the lines.
@@ -41,11 +42,11 @@ typedef struct data
 } data_shell;
 
 /**
- * This is a structure called "sep_list_s" that represents a single linked list.
+ * The Structure "sep_list_s" that = single linked list.
  * It has two members: "separator" and "next".
  * "separator" is a character that can be: (;) , (|), or (&).
  * "next" is a pointer to the next node in the linked list.
- * The purpose of this linked list is to store separators
+ * The purpose the linked list is to store separators
  */
 typedef struct sep_list_s
 {
@@ -55,8 +56,8 @@ typedef struct sep_list_s
 
 /**
  * struct line_list_s - single linked list
- * @line: command line
- * @next: next node
+ * line: command line
+ * next: next node
  * Description: single linked list to store command lines
  */
 typedef struct line_list_s
@@ -67,11 +68,10 @@ typedef struct line_list_s
 
 /**
  * A struct called 'r_var_list'.
- * This struct is essentially a single linked list.
- * The struct contains several elements such as 'len_var', 'val', 'len_val', and 'next'.
- * These elements store various data such as the length of the variable,the value of the variable
- * The length of the value, and a pointer to the next node in the list.
- * The purpose of this struct is to store variables.
+ * This struct is = single linked list.
+ * The struct contains several this;'len_var', 'val', 'len_val', and 'next'.
+ * The latter elem rep ; data of length of the variable,the value of the variable.
+ * Therefore the struct store variables.
  */
 typedef struct r_var_list
 {
@@ -82,9 +82,9 @@ typedef struct r_var_list
 } r_var;
 
 /**
- * struct builtin_s: is a structure represents a builtin command.
- * The name field holds the name of the command, such as cd, exit, env.
- * The f field is a pointer to a function that performs the command.
+ * struct builtin_s: reps a builtin command.
+ * Name field holds command, such as cd, exit, env.
+ * The f field is a pointer to a function exe the cmd.
  */
 typedef struct builtin_s
 {
