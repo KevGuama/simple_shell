@@ -41,10 +41,11 @@ typedef struct data
 } data_shell;
 
 /**
- * struct sep_list_s - single linked list
- * @separator: ; | &
- * @next: next node
- * Description: single linked list to store separators
+ * This is a structure called "sep_list_s" that represents a single linked list.
+ * It has two members: "separator" and "next".
+ * "separator" is a character that can be: (;) , (|), or (&).
+ * "next" is a pointer to the next node in the linked list.
+ * The purpose of this linked list is to store separators.
  */
 typedef struct sep_list_s
 {
