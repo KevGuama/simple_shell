@@ -66,12 +66,12 @@ typedef struct line_list_s
 } line_list;
 
 /**
- * struct r_var_list - single linked list
- * @len_var: length of the variable
- * @val: value of the variable
- * @len_val: length of the value
- * @next: next node
- * Description: single linked list to store variables
+ * A struct called 'r_var_list'.
+ * This struct is essentially a single linked list.
+ * The struct contains several elements such as 'len_var', 'val', 'len_val', and 'next'.
+ * These elements store various data such as the length of the variable,the value of the variable
+ * The length of the value, and a pointer to the next node in the list.
+ * The purpose of this struct is to store variables.
  */
 typedef struct r_var_list
 {
@@ -82,9 +82,9 @@ typedef struct r_var_list
 } r_var;
 
 /**
- * struct builtin_s - Builtin struct for command args.
- * @name: The name of the command builtin i.e cd, exit, env
- * @f: data type pointer function.
+ * struct builtin_s: is a structure represents a builtin command.
+ * The name field holds the name of the command, such as cd, exit, env.
+ * The f field is a pointer to a function that performs the command.
  */
 typedef struct builtin_s
 {
