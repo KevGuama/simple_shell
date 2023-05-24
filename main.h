@@ -3,32 +3,32 @@
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
-#include <stdlib.h>
 #include <limits.h>
 
 #define BUFSIZE 1024
 #define TOK_BUFSIZE 128
 #define TOK_DELIM " \t\r\n\a"
 
-/*Holds a collection of pointers to strings, commonly known as the "environment"*/
+/* Holds a collection of pointers to strings, commonly known as the "environment" */
 extern char **environ;
 
 
 /**
  * struct data: is a structure that contains data
- * av: refers to the argument vector.
- * input: is the user command line has written.
- * args: represents the tokens of the command line.
- * status: keeps track of the last status of the shell.
- * counter: counts the lines.
- * _environ: references the environment variable.
- * pid: stores the process ID of the shell.
+ * av: refers to argument vector
+ * input: is the user command line has written
+ * args: reps the tokens of the command line
+ * status: tracks the last status of the shell
+ * counter: counts the lines
+ * _environ: refers the environment variable
+ * pid: stores the process ID of the shell
  */
 typedef struct data
 {
@@ -42,11 +42,10 @@ typedef struct data
 } data_shell;
 
 /**
- * The Structure "sep_list_s" that = single linked list.
- * It has two members: "separator" and "next".
- * "separator" is a character that can be: (;) , (|), or (&).
- * "next" is a pointer to the next node in the linked list.
- * The purpose the linked list is to store separators
+ * Struct "sep_list_s" that reps single linked list
+ * "separator" is a chars that can be (;) , (|), or (&)
+ * "next" a pointer to the next node in the linked list
+ * Desc: the single linked list is to store separators
  */
 typedef struct sep_list_s
 {
@@ -58,7 +57,7 @@ typedef struct sep_list_s
  * struct line_list_s - single linked list
  * line: command line
  * next: next node
- * Description: single linked list to store command lines
+ * Desc: single linked list to store command lines
  */
 typedef struct line_list_s
 {
@@ -67,11 +66,12 @@ typedef struct line_list_s
 } line_list;
 
 /**
- * A struct called 'r_var_list'.
- * This struct is = single linked list.
- * The struct contains several this;'len_var', 'val', 'len_val', and 'next'.
- * The latter elem rep ; data of length of the variable,the value of the variable.
- * Therefore the struct store variables.
+ * struct called 'r_var_list'
+ * len_var: rep length of the variable
+ * val: rep value of the variable
+ * len_val: rep length of the value
+ * next: rep next node
+ * Desp: single linked list to store variables
  */
 typedef struct r_var_list
 {
@@ -82,9 +82,9 @@ typedef struct r_var_list
 } r_var;
 
 /**
- * struct builtin_s: reps a builtin command.
- * Name field holds command, such as cd, exit, env.
- * The f field is a pointer to a function exe the cmd.
+ * struct builtin_s: reps a builtin command
+ * Name field holds command, such as cd, exit, env
+ * f field is a pointer to a function exe the cmd
  */
 typedef struct builtin_s
 {
@@ -231,4 +231,3 @@ void aux_help_cd(void);
 int get_help(data_shell *datash);
 
 #endif
-
