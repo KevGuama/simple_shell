@@ -45,7 +45,7 @@ typedef struct data
  * It has two members: "separator" and "next".
  * "separator" is a character that can be: (;) , (|), or (&).
  * "next" is a pointer to the next node in the linked list.
- * The purpose of this linked list is to store separators.
+ * The purpose of this linked list is to store separators
  */
 typedef struct sep_list_s
 {
