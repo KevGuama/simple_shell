@@ -21,14 +21,14 @@ extern char **environ;
 
 
 /**
- * struct data: is a structure that contains data
- * av: refers to argument vector
- * input: is the user command line has written
- * args: reps the tokens of the command line
- * status: tracks the last status of the shell
- * counter: counts the lines
- * _environ: refers the environment variable
- * pid: stores the process ID of the shell
+ * @struct data : is a structure that contains data
+ * @av: refers to argument vector
+ * @input: is the user command line has written
+ * @args: reps the tokens of the command line
+ * @status: tracks the last status of the shell
+ * @counter: counts the lines
+ * @_environ: refers the environment variable
+ * @pid: stores the process ID of the shell
  */
 typedef struct data
 {
@@ -42,10 +42,10 @@ typedef struct data
 } data_shell;
 
 /**
- * Struct "sep_list_s" that reps single linked list
- * "separator" is a chars that can be (;) , (|), or (&)
- * "next" a pointer to the next node in the linked list
- * Desc: the single linked list is to store separators
+ * @struct sep_list_s : that reps single linked list
+ * @separator: is a chars that can be (;) , (|), or (&)
+ * @next: a pointer to the next node in the linked list
+ * Description: reps single linked list is to store separators
  */
 typedef struct sep_list_s
 {
@@ -54,10 +54,10 @@ typedef struct sep_list_s
 } sep_list;
 
 /**
- * struct line_list_s - single linked list
- * line: command line
- * next: next node
- * Desc: single linked list to store command lines
+ * @struct line_list_s -rep single linked list
+ * @line: reps command line
+ * @next: next node
+ * Description: single linked list stores command lines
  */
 typedef struct line_list_s
 {
@@ -66,12 +66,12 @@ typedef struct line_list_s
 } line_list;
 
 /**
- * struct called 'r_var_list'
- * len_var: rep length of the variable
- * val: rep value of the variable
- * len_val: rep length of the value
- * next: rep next node
- * Desp: single linked list to store variables
+ * @struct r_var_list - reps single linked list
+ * @len_var: rep length of the variable
+ * @val: rep value of the variable
+ * @len_val: rep length of the value
+ * @next: rep next node
+ * Description: single linked list stores variables
  */
 typedef struct r_var_list
 {
@@ -82,9 +82,9 @@ typedef struct r_var_list
 } r_var;
 
 /**
- * struct builtin_s: reps a builtin command
- * Name field holds command, such as cd, exit, env
- * f field is a pointer to a function exe the cmd
+ * @struct builtin_s reps a builtin command
+ * @name: field holds command, such as cd, exit, env
+ * @f: field is a pointer to a function exe the cmd
  */
 typedef struct builtin_s
 {
