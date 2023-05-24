@@ -7,28 +7,28 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-#include <errno.h>
 #include <fcntl.h>
-#include <signal.h>
+#include <errno.h>
 #include <limits.h>
+#include <signal.h>
 
 #define BUFSIZE 1024
 #define TOK_BUFSIZE 128
 #define TOK_DELIM " \t\r\n\a"
 
-/* Holds a collection of pointers to strings, commonly known as the "environment" */
+/* Holds an array of pointers to strings called the "environment" */
 extern char **environ;
 
 
 /**
- * @struct data : is a structure that contains data
+ * struct data - struct contains the relevant data on runtime
  * @av: refers to argument vector
- * @input: is the user command line has written
- * @args: reps the tokens of the command line
- * @status: tracks the last status of the shell
- * @counter: counts the lines
- * @_environ: refers the environment variable
- * @pid: stores the process ID of the shell
+ * @input: the command line written by the user
+ * @args: reps tokens of the command line
+ * @status: reps last status of the shell
+ * @counter: reps lines counter
+ * @_environ: environment variable
+ * @pid: stores process ID of the shell
  */
 typedef struct data
 {
@@ -42,10 +42,10 @@ typedef struct data
 } data_shell;
 
 /**
- * @struct sep_list_s : that reps single linked list
- * @separator: is a chars that can be (;) , (|), or (&)
- * @next: a pointer to the next node in the linked list
- * Description: reps single linked list is to store separators
+ * struct sep_list_s - single linked list prep
+ * @separator: ; | &
+ * @next: a next node prep
+ * Description: a single linked list to store separators
  */
 typedef struct sep_list_s
 {
@@ -54,10 +54,10 @@ typedef struct sep_list_s
 } sep_list;
 
 /**
- * @struct line_list_s -rep single linked list
- * @line: reps command line
- * @next: next node
- * Description: single linked list stores command lines
+ * struct line_list_s - single linked list
+ * @line: the command line
+ * @next: the next node
+ * Description: a single linked list to store command lines
  */
 typedef struct line_list_s
 {
@@ -66,12 +66,12 @@ typedef struct line_list_s
 } line_list;
 
 /**
- * @struct r_var_list - reps single linked list
+ * struct r_var_list - a single linked list
  * @len_var: rep length of the variable
  * @val: rep value of the variable
  * @len_val: rep length of the value
  * @next: rep next node
- * Description: single linked list stores variables
+ * Description: a single linked list to store variables
  */
 typedef struct r_var_list
 {
@@ -82,9 +82,9 @@ typedef struct r_var_list
 } r_var;
 
 /**
- * @struct builtin_s reps a builtin command
- * @name: field holds command, such as cd, exit, env
- * @f: field is a pointer to a function exe the cmd
+ * struct builtin_s - reps Builtin struct for command args.
+ * @name: reps the name of the command builtin i.e cd, exit, env
+ * @f: reps data type pointer function.
  */
 typedef struct builtin_s
 {
@@ -231,3 +231,4 @@ void aux_help_cd(void);
 int get_help(data_shell *datash);
 
 #endif
+
